@@ -269,11 +269,11 @@ const DiaryFeed = () => {
                   }}>
                     <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
                       <Avatar sx={{ bgcolor: 'primary.main' }}>
-                        {entry.userId.name.charAt(0).toUpperCase()}
+                        {entry.userId?.name ? entry.userId.name.charAt(0).toUpperCase() : 'U'}
                       </Avatar>
                       <Box>
                         <Typography variant="subtitle1" sx={{ fontWeight: 600 }}>
-                          {entry.userId.name}
+                          {entry.userId?.name || 'Unknown User'}
                         </Typography>
                         <Typography variant="caption" color="text.secondary" sx={{ display: 'flex', alignItems: 'center' }}>
                           <CalendarToday sx={{ fontSize: 14, mr: 0.5 }} />
